@@ -24,7 +24,12 @@ def app():
     Button(pantalla4,text="REGISTRAR CLIENTE", width="30",height="3",command = registro_datos).pack()
     Label(pantalla4,text="").pack()
     Label(pantalla4,text="").pack()
-    
+    Button(pantalla4,text="CONSULTAR POR NUMERO CLIENTE", width="30",height="3",command = consulta_dato).pack()
+    Label(pantalla4,text="").pack()
+    Label(pantalla4,text="").pack()
+    Button(pantalla4,text="INGRESAR MES PAGO", width="30",height="3",command = modifica_datos).pack()
+    Label(pantalla4,text="").pack()
+    Label(pantalla4,text="").pack()
     
     Button(pantalla4,text="LISTADO COMPLETO DE CLIENTES", width="30",height="3",command = listado_completo).pack()
 
