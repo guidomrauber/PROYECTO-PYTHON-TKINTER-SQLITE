@@ -1,15 +1,19 @@
 import sqlite3
 
-conexion=sqlite3.connect("bdEjemploPy.db")
+conexion=sqlite3.connect("bd3.db")
 try:
-    conexion.execute("""create table countries (
+    conexion.execute("""create table clientes (
                               Id integer primary key autoincrement,
-                              ISO3 text,
-                              CountryName text,
-                              Capital text,
-                              CurrencyCode text
+                              nombre text,
+                              apellido text,
+                              dni integer,
+                              domicilio text,
+                              email text,
+                              telefono text,
+                              cuota integer
+
                         )""")
-    print("se creo la tabla countries")                        
+    print("se creo la tabla clientes")                        
 except sqlite3.OperationalError:
-    print("La tabla articulos ya existe")                    
+    print("La tabla clientes ya existe")                    
 conexion.close()
