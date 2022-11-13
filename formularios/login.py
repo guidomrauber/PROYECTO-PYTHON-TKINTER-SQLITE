@@ -3,7 +3,7 @@ from tkinter import *
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
-import pymysql
+import sqlite3
 import formularios.registrar2
 import formularios.principal2 
 def mostrar():
@@ -38,19 +38,15 @@ def mostrar():
 
     Button(pantalla1, text = "INICIAR SESION", command=validacion_datos).pack()
 def validacion_datos():
-    conexion1=pymysql.connect(host='localhost',
-                                user='root',
-                                passwd='',
-                                db='bd3')
+    conexion1=sqlite3.connect('bd3.db')
     cursor1=conexion1.cursor()
-    sql="select * from login where usuario=%s and contrasena=%s"
+    sql="select * from login where usuario=(?) and contrasena=(?) "
     datos=(nusuario_entrar.get(),contr_entrar.get())
     global result 
     result=cursor1.execute(sql,datos)
-    self=""
-    if (result)>0:
-           
-       articulo1=formularios.principal2.app()
+    print (result)
+    if result.fetchall():
+        articulo1=formularios.principal2.app()
     else:
             messagebox.showinfo("Información", "USUARIO Y CONTRASEÑA INCORRECTO")
     conexion1.close()

@@ -1,10 +1,9 @@
-import pymysql
+import sqlite3
 
 class Countries:
 
     def __init__(self):
-        self.cnn = pymysql.connect(host="localhost", user="root", 
-        passwd="", database="bd3")
+        self.cnn = sqlite3.connect("bd3.db")
 
     def __str__(self):
         datos=self.consulta_paises()        
