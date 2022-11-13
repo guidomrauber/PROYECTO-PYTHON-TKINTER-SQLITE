@@ -3,7 +3,7 @@ from tkinter import *
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
-import pymysql
+import sqlite3
 
 def registrar():
     global pantalla2
@@ -67,12 +67,9 @@ def registrar():
     Label(pantalla2,text="").pack()
     Button(pantalla2, text = "REGISTRAR",command=inserta_datos).pack()
 def inserta_datos():
-    conexion1=pymysql.connect(host='localhost',
-                                user='root',
-                                passwd='',
-                                db='bd3')
+    conexion1=sqlite3.connect(db='bd3.db')
     cursor1=conexion1.cursor()
-    sql="INSERT INTO clientes (nombre, apellido, dni,domicilio,email,telefono,cuota) VALUES (%s,%s,%s,%s,%s,%s,%s)"
+    sql="INSERT INTO clientes (nombre, apellido, dni,domicilio,email,telefono,cuota) VALUES (?,?,?,?,?,?,?)"
     datos=(nusuario2_ver.get(),contr2_ver.get(),dni2_ver.get(),domi2_ver.get(),email.get(),telefono.get(),cuota.get())
     
     try:

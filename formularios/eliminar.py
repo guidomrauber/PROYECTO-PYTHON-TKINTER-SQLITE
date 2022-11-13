@@ -3,7 +3,7 @@ from tkinter import *
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
-import pymysql
+import sqlite3
 import formularios.countries
 from formularios.countries import *
 def mostrar():
@@ -64,12 +64,9 @@ def modificacion(contr_entrar,nusuario_entrar):
         conexion1.close()
         return cursor1.rowcount # retornamos la cantidad de filas modificadas
 def consulta_datos():
-    conexion1=pymysql.connect(host='localhost',
-                                user='root',
-                                passwd='',
-                                db='bd3')
+    conexion1=sqlite3.connect('bd3.db')
     cursor1=conexion1.cursor()
-    sql="select * from clientes where dni=%s "
+    sql="select * from clientes where dni=? "
     datos=(nusuario_entrar.get())
     global result 
     result=cursor1.execute(sql,datos)

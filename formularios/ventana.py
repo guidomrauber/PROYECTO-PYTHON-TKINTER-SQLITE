@@ -118,7 +118,7 @@ class Ventana(Frame):
                     messagebox.showwarning("Eliminar", 'No fue posible eliminar el elemento.')
                             
     def fCancelar(self):
-        r = messagebox.askquestion("Calcelar", "Esta seguro que desea cancelar la operación actual")
+        r = messagebox.askquestion("Cancelar", "Esta seguro que desea cancelar la operación actual")
         if r == messagebox.YES:
             self.limpiarCajas() 
             self.habilitarBtnGuardar("disabled")      

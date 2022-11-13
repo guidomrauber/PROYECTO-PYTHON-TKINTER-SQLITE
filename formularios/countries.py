@@ -2,6 +2,7 @@ import sqlite3
 
 class Countries:
 
+    
     def __init__(self):
         self.cnn = sqlite3.connect("bd3.db")
 
@@ -19,7 +20,7 @@ class Countries:
         cur.close()    
         return datos
 
-    def buscar_pais(self, Id):
+    def buscar_pais(self,Id):
         cur = self.cnn.cursor()
         sql= "SELECT * FROM clientes WHERE Id = {}".format(Id)
         cur.execute(sql)
