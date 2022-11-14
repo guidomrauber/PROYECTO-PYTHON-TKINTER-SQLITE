@@ -29,7 +29,7 @@ class Articulos:
         try:
             cone=self.abrir()
             cursor=cone.cursor()
-            sql="select * precio from clientes"
+            sql="select *  from clientes"
             cursor.execute(sql)
             return cursor.fetchall()
         finally:

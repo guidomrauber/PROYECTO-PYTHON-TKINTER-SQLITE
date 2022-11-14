@@ -10,7 +10,7 @@ def registrar():
     pantalla2 =tk.Tk()
     pantalla2.geometry("450x720")
     pantalla2.title("REGISTRO")
-    pantalla2.iconbitmap("images.ico")
+   
 
     global nusuario2_ver
     global contr2_ver

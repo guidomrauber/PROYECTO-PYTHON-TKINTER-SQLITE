@@ -7,6 +7,7 @@ import formularios.login
 import formularios.registrar
 import formularios.registrar2
 
+
 import formularios.ventana
 import formularios.consulta
 import formularios.countries
@@ -19,14 +20,11 @@ def inicio_sesion():
 def registro_datos():
     formularios.registrar.registrar()
 pantalla = tk.Tk()
-pantalla.geometry("1280x720")
+pantalla.geometry("500x720")
 pantalla.title("BIENVENIDOS")
-pantalla.iconbitmap("images.ico")
 
-image = PhotoImage(file = "images.gif")
-image = image.subsample(1,1)
-label=Label(image=image)
-label.pack()
+
+
 Label(text="ACCESO AL SISTEMA",  fg="navy",width="300",height="1", font=("calibri", 25)).pack()
 
 Label(text="DEL GYM",  fg="navy",width="300",height="1", font=("calibri", 25)).pack()

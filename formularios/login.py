@@ -11,7 +11,7 @@ def mostrar():
     pantalla1 = tk.Tk()
     pantalla1.geometry("1280x720")
     pantalla1.title("INICIO DE SESION")
-    pantalla1.iconbitmap("images.ico")
+   
     
     Label(pantalla1,text="").pack()
     Label(pantalla1,text="").pack()

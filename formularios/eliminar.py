@@ -13,7 +13,7 @@ def mostrar():
     pantalla1 = tk.Tk()
     pantalla1.geometry("300x300")
     pantalla1.title("ELIMINAR REGISTRO")
-    pantalla1.iconbitmap("images.ico")
+   
     
     Label(pantalla1,text="").pack()
     Label(pantalla1,text="").pack()
